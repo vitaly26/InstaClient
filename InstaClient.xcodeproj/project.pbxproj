@@ -35,6 +35,9 @@
 		D818A842179EEA5A00EE64D8 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A841179EEA5A00EE64D8 /* ODRefreshControl.m */; };
 		D818A845179EEABA00EE64D8 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A844179EEABA00EE64D8 /* TableViewController.m */; };
 		D818A847179EEC0300EE64D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D818A846179EEC0300EE64D8 /* QuartzCore.framework */; };
+		D818A84D179EEF8F00EE64D8 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A84C179EEF8F00EE64D8 /* Model.m */; };
+		D818A851179EEFB400EE64D8 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A850179EEFB400EE64D8 /* Feed.m */; };
+		D818A854179EF07900EE64D8 /* NSDictionary+VPObjectOrNil.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A853179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,12 @@
 		D818A843179EEABA00EE64D8 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		D818A844179EEABA00EE64D8 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		D818A846179EEC0300EE64D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D818A84B179EEF8F00EE64D8 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = Model/Model.h; sourceTree = "<group>"; };
+		D818A84C179EEF8F00EE64D8 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = Model/Model.m; sourceTree = "<group>"; };
+		D818A84F179EEFB400EE64D8 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		D818A850179EEFB400EE64D8 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
+		D818A852179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+VPObjectOrNil.h"; sourceTree = "<group>"; };
+		D818A853179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+VPObjectOrNil.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +160,10 @@
 				D818A83A179EBE3D00EE64D8 /* InstagramClient.m */,
 				D818A843179EEABA00EE64D8 /* TableViewController.h */,
 				D818A844179EEABA00EE64D8 /* TableViewController.m */,
+				D818A84E179EEFA200EE64D8 /* Model */,
 				D818A7F9179EB9F500EE64D8 /* Supporting Files */,
+				D818A852179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.h */,
+				D818A853179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.m */,
 			);
 			path = InstaClient;
 			sourceTree = "<group>";
@@ -212,6 +224,17 @@
 				D818A841179EEA5A00EE64D8 /* ODRefreshControl.m */,
 			);
 			path = ODRefreshControl;
+			sourceTree = "<group>";
+		};
+		D818A84E179EEFA200EE64D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D818A84B179EEF8F00EE64D8 /* Model.h */,
+				D818A84C179EEF8F00EE64D8 /* Model.m */,
+				D818A84F179EEFB400EE64D8 /* Feed.h */,
+				D818A850179EEFB400EE64D8 /* Feed.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +319,9 @@
 				D818A83E179EC17A00EE64D8 /* LoginViewController.m in Sources */,
 				D818A842179EEA5A00EE64D8 /* ODRefreshControl.m in Sources */,
 				D818A845179EEABA00EE64D8 /* TableViewController.m in Sources */,
+				D818A84D179EEF8F00EE64D8 /* Model.m in Sources */,
+				D818A851179EEFB400EE64D8 /* Feed.m in Sources */,
+				D818A854179EF07900EE64D8 /* NSDictionary+VPObjectOrNil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

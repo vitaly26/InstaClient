@@ -81,12 +81,17 @@
 	}];
 }
 
-- (void)userFeedWithBlock:(void (^)(NSArray *, NSError *))block {
+- (void)userFeedWithBlock:(void (^)(NSArray *feeds, NSError *error))block {
 	NSDictionary *parameters = @{kAccessToken: self.token};
 	[self getPath:@"v1/users/self/feed" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		NSLog(@"response %@", responseObject);
+		if (block) {
+			block(responseObject[@"data"], nil);
+		}
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		
+		if (block) {
+			block(nil, error);
+		}
 	}];
 }
 

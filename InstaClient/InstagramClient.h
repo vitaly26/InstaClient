@@ -18,5 +18,6 @@
 + (NSString *)redirectScheme;
 
 - (void)getTokenWithBlock:(void (^)(NSString *token, NSError *error))block;
+- (void)userFeedWithBlock:(void (^)(NSArray *feed, NSError *error))block;
 
 @end

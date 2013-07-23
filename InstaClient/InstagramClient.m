@@ -13,6 +13,8 @@
 #define InstagramID @"5fcf46df12c444e4961f53964d30609b"
 #define InstagramSecret @"50a8486dbb354546a700c63ba1f3942b"
 
+#define kAccessToken @"access_token"
+
 @implementation InstagramClient
 
 + (InstagramClient *)sharedClient {
@@ -55,7 +57,7 @@
 							 @"redirect_uri":InstagramRedirectURI};
 	[self postPath:@"oauth/access_token" parameters:parametes success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		NSLog(@"json %@", responseObject);
-		self.token = responseObject[@"access_token"];
+		self.token = responseObject[kAccessToken];
 		if (self.token) {
 			if (block) {
 				block(self.token, nil);
@@ -76,6 +78,15 @@
 		if (block) {
 			block(nil, error);
 		}
+	}];
+}
+
+- (void)userFeedWithBlock:(void (^)(NSArray *, NSError *))block {
+	NSDictionary *parameters = @{kAccessToken: self.token};
+	[self getPath:@"v1/users/self/feed" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+		NSLog(@"response %@", responseObject);
+	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+		
 	}];
 }
 

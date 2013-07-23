@@ -33,6 +33,8 @@
 		D818A83B179EBE3D00EE64D8 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A83A179EBE3D00EE64D8 /* InstagramClient.m */; };
 		D818A83E179EC17A00EE64D8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A83D179EC17900EE64D8 /* LoginViewController.m */; };
 		D818A842179EEA5A00EE64D8 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A841179EEA5A00EE64D8 /* ODRefreshControl.m */; };
+		D818A845179EEABA00EE64D8 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A844179EEABA00EE64D8 /* TableViewController.m */; };
+		D818A847179EEC0300EE64D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D818A846179EEC0300EE64D8 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,9 @@
 		D818A83D179EC17900EE64D8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D818A840179EEA5A00EE64D8 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		D818A841179EEA5A00EE64D8 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
+		D818A843179EEABA00EE64D8 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		D818A844179EEABA00EE64D8 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		D818A846179EEC0300EE64D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D818A847179EEC0300EE64D8 /* QuartzCore.framework in Frameworks */,
 				D818A838179EBD5100EE64D8 /* Security.framework in Frameworks */,
 				D818A836179EBBCB00EE64D8 /* MobileCoreServices.framework in Frameworks */,
 				D818A834179EBBC700EE64D8 /* SystemConfiguration.framework in Frameworks */,
@@ -125,6 +131,7 @@
 				D818A837179EBD5100EE64D8 /* Security.framework */,
 				D818A835179EBBCB00EE64D8 /* MobileCoreServices.framework */,
 				D818A833179EBBC600EE64D8 /* SystemConfiguration.framework */,
+				D818A846179EEC0300EE64D8 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,6 +149,8 @@
 				D818A83D179EC17900EE64D8 /* LoginViewController.m */,
 				D818A839179EBE3D00EE64D8 /* InstagramClient.h */,
 				D818A83A179EBE3D00EE64D8 /* InstagramClient.m */,
+				D818A843179EEABA00EE64D8 /* TableViewController.h */,
+				D818A844179EEABA00EE64D8 /* TableViewController.m */,
 				D818A7F9179EB9F500EE64D8 /* Supporting Files */,
 			);
 			path = InstaClient;
@@ -286,6 +295,7 @@
 				D818A83B179EBE3D00EE64D8 /* InstagramClient.m in Sources */,
 				D818A83E179EC17A00EE64D8 /* LoginViewController.m in Sources */,
 				D818A842179EEA5A00EE64D8 /* ODRefreshControl.m in Sources */,
+				D818A845179EEABA00EE64D8 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

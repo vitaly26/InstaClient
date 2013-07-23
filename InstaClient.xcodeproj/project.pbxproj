@@ -30,6 +30,8 @@
 		D818A834179EBBC700EE64D8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D818A833179EBBC600EE64D8 /* SystemConfiguration.framework */; };
 		D818A836179EBBCB00EE64D8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D818A835179EBBCB00EE64D8 /* MobileCoreServices.framework */; };
 		D818A838179EBD5100EE64D8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D818A837179EBD5100EE64D8 /* Security.framework */; };
+		D818A83B179EBE3D00EE64D8 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A83A179EBE3D00EE64D8 /* InstagramClient.m */; };
+		D818A83E179EC17A00EE64D8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A83D179EC17900EE64D8 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,10 @@
 		D818A833179EBBC600EE64D8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D818A835179EBBCB00EE64D8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D818A837179EBD5100EE64D8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D818A839179EBE3D00EE64D8 /* InstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramClient.h; sourceTree = "<group>"; };
+		D818A83A179EBE3D00EE64D8 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
+		D818A83C179EC17900EE64D8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D818A83D179EC17900EE64D8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,10 @@
 				D818A80A179EB9F500EE64D8 /* ViewController.h */,
 				D818A80B179EB9F500EE64D8 /* ViewController.m */,
 				D818A80D179EB9F500EE64D8 /* ViewController.xib */,
+				D818A83C179EC17900EE64D8 /* LoginViewController.h */,
+				D818A83D179EC17900EE64D8 /* LoginViewController.m */,
+				D818A839179EBE3D00EE64D8 /* InstagramClient.h */,
+				D818A83A179EBE3D00EE64D8 /* InstagramClient.m */,
 				D818A7F9179EB9F500EE64D8 /* Supporting Files */,
 			);
 			path = InstaClient;
@@ -260,6 +270,8 @@
 				D818A830179EBB6C00EE64D8 /* AFURLConnectionOperation.m in Sources */,
 				D818A831179EBB6C00EE64D8 /* AFXMLRequestOperation.m in Sources */,
 				D818A832179EBB6C00EE64D8 /* UIImageView+AFNetworking.m in Sources */,
+				D818A83B179EBE3D00EE64D8 /* InstagramClient.m in Sources */,
+				D818A83E179EC17A00EE64D8 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +396,7 @@
 				D818A814179EB9F500EE64D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -32,6 +32,7 @@
 		D818A838179EBD5100EE64D8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D818A837179EBD5100EE64D8 /* Security.framework */; };
 		D818A83B179EBE3D00EE64D8 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A83A179EBE3D00EE64D8 /* InstagramClient.m */; };
 		D818A83E179EC17A00EE64D8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A83D179EC17900EE64D8 /* LoginViewController.m */; };
+		D818A842179EEA5A00EE64D8 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A841179EEA5A00EE64D8 /* ODRefreshControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		D818A83A179EBE3D00EE64D8 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
 		D818A83C179EC17900EE64D8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D818A83D179EC17900EE64D8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D818A840179EEA5A00EE64D8 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		D818A841179EEA5A00EE64D8 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,7 @@
 		D818A815179EBB6C00EE64D8 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				D818A83F179EEA5A00EE64D8 /* ODRefreshControl */,
 				D818A816179EBB6C00EE64D8 /* AFNetworking */,
 			);
 			path = SDK;
@@ -190,6 +194,15 @@
 				D818A829179EBB6C00EE64D8 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		D818A83F179EEA5A00EE64D8 /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				D818A840179EEA5A00EE64D8 /* ODRefreshControl.h */,
+				D818A841179EEA5A00EE64D8 /* ODRefreshControl.m */,
+			);
+			path = ODRefreshControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +285,7 @@
 				D818A832179EBB6C00EE64D8 /* UIImageView+AFNetworking.m in Sources */,
 				D818A83B179EBE3D00EE64D8 /* InstagramClient.m in Sources */,
 				D818A83E179EC17A00EE64D8 /* LoginViewController.m in Sources */,
+				D818A842179EEA5A00EE64D8 /* ODRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

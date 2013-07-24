@@ -20,6 +20,10 @@ static NSString const * NotificationUserIsSignedIn = @"NotificationUserIsSignedI
 + (NSString *)redirectScheme;
 
 - (void)getTokenWithBlock:(void (^)(NSString *token, NSError *error))block;
-- (void)userFeedWithBlock:(void (^)(NSArray *feeds, NSError *error))block;
+- (void)userFeedWithBlock:(void (^)(id responseObject, NSError *error))block;
+- (void)userFeedWithMaxID:(NSString *)maxID block:(void (^)(id responseObject, NSError *error))block;
+
+#pragma mark - Cancel operations
+- (void)cancelUserFeedLoading;
 
 @end

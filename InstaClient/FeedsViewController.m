@@ -10,9 +10,11 @@
 #import "InstagramClient.h"
 #import "Feed.h"
 #import "FeedCell.h"
+#import "PaginatorUserFeed.h"
 
-@interface FeedsViewController ()
+@interface FeedsViewController () <PaginatorDelegate>
 @property(nonatomic, strong) NSMutableArray *data;
+@property(nonatomic, strong) PaginatorUserFeed *paginator;
 @end
 
 @implementation FeedsViewController
@@ -20,6 +22,9 @@
 - (void)configure {
 	[super configure];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHandler:) name:(NSString *)NotificationUserIsSignedIn object:nil];
+	self.data = [NSMutableArray array];
+	PaginatorUserFeed *paginator = [[PaginatorUserFeed alloc] initWithPageSize:0 delegate:self];
+	self.paginator = paginator;
 }
 
 - (void)viewDidLoad {
@@ -35,20 +40,8 @@
 }
 
 - (void)refresh:(id)sender {
-	[[InstagramClient sharedClient] userFeedWithBlock:^(NSArray *feeds, NSError *error) {
-		[self endRefreshing];
-		if (error) {
-			NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
-		} else {
-			NSMutableArray *newFeeds = [NSMutableArray array];
-			for (NSDictionary *item in feeds) {
-				Feed *feed = [[Feed alloc] initWithDictionary:item];
-				[newFeeds addObject:feed];
-			}
-			self.data = newFeeds;
-			[self.tableView reloadData];
-		}
-	}];
+	[self beginRefreshing];
+	[self.paginator fetchFirstPage];
 }
 
 - (void)dealloc {
@@ -80,8 +73,24 @@
 }
 
 #pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
+#pragma mark - PaginatorDelegate methods
+- (void)paginator:(Paginator *)paginator didReceiveResults:(NSArray *)results firstPage:(BOOL)isFirstPage {
+	[self endRefreshing];
+	NSLog(@"results %@", results);
+	if (isFirstPage) {
+		[self.data removeAllObjects];
+	}
+	[self.data addObjectsFromArray:results];
+	[self.tableView reloadData];
+}
+
+- (void)paginatorDidFailToRespond:(Paginator *)paginator error:(NSError *)error {
+	[self endRefreshing];
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
+}
+
+#pragma mark -
 @end

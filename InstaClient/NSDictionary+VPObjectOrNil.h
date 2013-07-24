@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (VPObjectOrNil)
-- (id)objectOrNilForKey:(id)key;
-- (id)valueOrNilForKeyPath:(NSString *)keyPath;
+- (id)vp_objectOrNilForKey:(id)key;
+- (id)vp_valueOrNilForKeyPath:(NSString *)keyPath;
 @end

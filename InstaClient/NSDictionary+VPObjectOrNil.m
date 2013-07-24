@@ -10,7 +10,7 @@
 
 @implementation NSDictionary (VPObjectOrNil)
 
-- (id)objectOrNilForKey:(id)key {
+- (id)vp_objectOrNilForKey:(id)key {
 	id obj = [self objectForKey:key];
 	if((NSNull *)obj == [NSNull null]) {
 		return nil;
@@ -18,7 +18,7 @@
 	return obj;
 }
 
-- (id)valueOrNilForKeyPath:(NSString *)keyPath {
+- (id)vp_valueOrNilForKeyPath:(NSString *)keyPath {
 	id obj = [self valueForKeyPath:keyPath];
 	if((NSNull *)obj == [NSNull null]) {
 		return nil;

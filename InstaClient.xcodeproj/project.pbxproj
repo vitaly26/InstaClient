@@ -41,6 +41,8 @@
 		D818A85C179F0F8D00EE64D8 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D818A85B179F0F8C00EE64D8 /* FeedCell.xib */; };
 		D818A865179FA59300EE64D8 /* PhotoPlaceholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D818A863179FA59300EE64D8 /* PhotoPlaceholder.jpg */; };
 		D818A866179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D818A864179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg */; };
+		D856F63E17A03C4800367911 /* Paginator.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F63D17A03C4800367911 /* Paginator.m */; };
+		D856F64217A04A0A00367911 /* PaginatorUserFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64117A04A0A00367911 /* PaginatorUserFeed.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,10 @@
 		D818A85B179F0F8C00EE64D8 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		D818A863179FA59300EE64D8 /* PhotoPlaceholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PhotoPlaceholder.jpg; sourceTree = "<group>"; };
 		D818A864179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PhotoPlaceholder@2x.jpg"; sourceTree = "<group>"; };
+		D856F63C17A03C4800367911 /* Paginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paginator.h; sourceTree = "<group>"; };
+		D856F63D17A03C4800367911 /* Paginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paginator.m; sourceTree = "<group>"; };
+		D856F64017A04A0A00367911 /* PaginatorUserFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginatorUserFeed.h; sourceTree = "<group>"; };
+		D856F64117A04A0A00367911 /* PaginatorUserFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginatorUserFeed.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 				D818A858179F0F7400EE64D8 /* FeedCell.h */,
 				D818A859179F0F7400EE64D8 /* FeedCell.m */,
 				D818A85B179F0F8C00EE64D8 /* FeedCell.xib */,
+				D856F63F17A0494C00367911 /* Paginators */,
 				D818A85E179F141100EE64D8 /* Resource */,
 			);
 			path = InstaClient;
@@ -254,6 +261,17 @@
 				D818A864179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		D856F63F17A0494C00367911 /* Paginators */ = {
+			isa = PBXGroup;
+			children = (
+				D856F63C17A03C4800367911 /* Paginator.h */,
+				D856F63D17A03C4800367911 /* Paginator.m */,
+				D856F64017A04A0A00367911 /* PaginatorUserFeed.h */,
+				D856F64117A04A0A00367911 /* PaginatorUserFeed.m */,
+			);
+			name = Paginators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +362,8 @@
 				D818A854179EF07900EE64D8 /* NSDictionary+VPObjectOrNil.m in Sources */,
 				D818A857179EFA5000EE64D8 /* FeedsViewController.m in Sources */,
 				D818A85A179F0F7400EE64D8 /* FeedCell.m in Sources */,
+				D856F63E17A03C4800367911 /* Paginator.m in Sources */,
+				D856F64217A04A0A00367911 /* PaginatorUserFeed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

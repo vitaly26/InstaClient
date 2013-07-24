@@ -16,8 +16,6 @@
 		D818A805179EB9F500EE64D8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D818A804179EB9F500EE64D8 /* Default.png */; };
 		D818A807179EB9F500EE64D8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D818A806179EB9F500EE64D8 /* Default@2x.png */; };
 		D818A809179EB9F500EE64D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D818A808179EB9F500EE64D8 /* Default-568h@2x.png */; };
-		D818A80C179EB9F500EE64D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A80B179EB9F500EE64D8 /* ViewController.m */; };
-		D818A80F179EB9F500EE64D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D818A80D179EB9F500EE64D8 /* ViewController.xib */; };
 		D818A82A179EBB6C00EE64D8 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A818179EBB6C00EE64D8 /* AFHTTPClient.m */; };
 		D818A82B179EBB6C00EE64D8 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A81A179EBB6C00EE64D8 /* AFHTTPRequestOperation.m */; };
 		D818A82C179EBB6C00EE64D8 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A81C179EBB6C00EE64D8 /* AFImageRequestOperation.m */; };
@@ -38,6 +36,11 @@
 		D818A84D179EEF8F00EE64D8 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A84C179EEF8F00EE64D8 /* Model.m */; };
 		D818A851179EEFB400EE64D8 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A850179EEFB400EE64D8 /* Feed.m */; };
 		D818A854179EF07900EE64D8 /* NSDictionary+VPObjectOrNil.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A853179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.m */; };
+		D818A857179EFA5000EE64D8 /* FeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A856179EFA5000EE64D8 /* FeedsViewController.m */; };
+		D818A85A179F0F7400EE64D8 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D818A859179F0F7400EE64D8 /* FeedCell.m */; };
+		D818A85C179F0F8D00EE64D8 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D818A85B179F0F8C00EE64D8 /* FeedCell.xib */; };
+		D818A865179FA59300EE64D8 /* PhotoPlaceholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D818A863179FA59300EE64D8 /* PhotoPlaceholder.jpg */; };
+		D818A866179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D818A864179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,9 +57,6 @@
 		D818A804179EB9F500EE64D8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D818A806179EB9F500EE64D8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D818A808179EB9F500EE64D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D818A80A179EB9F500EE64D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D818A80B179EB9F500EE64D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D818A80E179EB9F500EE64D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		D818A817179EBB6C00EE64D8 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		D818A818179EBB6C00EE64D8 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		D818A819179EBB6C00EE64D8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -94,6 +94,13 @@
 		D818A850179EEFB400EE64D8 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
 		D818A852179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+VPObjectOrNil.h"; sourceTree = "<group>"; };
 		D818A853179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+VPObjectOrNil.m"; sourceTree = "<group>"; };
+		D818A855179EFA5000EE64D8 /* FeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedsViewController.h; sourceTree = "<group>"; };
+		D818A856179EFA5000EE64D8 /* FeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedsViewController.m; sourceTree = "<group>"; };
+		D818A858179F0F7400EE64D8 /* FeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
+		D818A859179F0F7400EE64D8 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
+		D818A85B179F0F8C00EE64D8 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		D818A863179FA59300EE64D8 /* PhotoPlaceholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PhotoPlaceholder.jpg; sourceTree = "<group>"; };
+		D818A864179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PhotoPlaceholder@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +158,6 @@
 				D818A815179EBB6C00EE64D8 /* SDK */,
 				D818A801179EB9F500EE64D8 /* AppDelegate.h */,
 				D818A802179EB9F500EE64D8 /* AppDelegate.m */,
-				D818A80A179EB9F500EE64D8 /* ViewController.h */,
-				D818A80B179EB9F500EE64D8 /* ViewController.m */,
-				D818A80D179EB9F500EE64D8 /* ViewController.xib */,
 				D818A83C179EC17900EE64D8 /* LoginViewController.h */,
 				D818A83D179EC17900EE64D8 /* LoginViewController.m */,
 				D818A839179EBE3D00EE64D8 /* InstagramClient.h */,
@@ -164,6 +168,12 @@
 				D818A7F9179EB9F500EE64D8 /* Supporting Files */,
 				D818A852179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.h */,
 				D818A853179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.m */,
+				D818A855179EFA5000EE64D8 /* FeedsViewController.h */,
+				D818A856179EFA5000EE64D8 /* FeedsViewController.m */,
+				D818A858179F0F7400EE64D8 /* FeedCell.h */,
+				D818A859179F0F7400EE64D8 /* FeedCell.m */,
+				D818A85B179F0F8C00EE64D8 /* FeedCell.xib */,
+				D818A85E179F141100EE64D8 /* Resource */,
 			);
 			path = InstaClient;
 			sourceTree = "<group>";
@@ -237,6 +247,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		D818A85E179F141100EE64D8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D818A863179FA59300EE64D8 /* PhotoPlaceholder.jpg */,
+				D818A864179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,7 +311,9 @@
 				D818A805179EB9F500EE64D8 /* Default.png in Resources */,
 				D818A807179EB9F500EE64D8 /* Default@2x.png in Resources */,
 				D818A809179EB9F500EE64D8 /* Default-568h@2x.png in Resources */,
-				D818A80F179EB9F500EE64D8 /* ViewController.xib in Resources */,
+				D818A85C179F0F8D00EE64D8 /* FeedCell.xib in Resources */,
+				D818A865179FA59300EE64D8 /* PhotoPlaceholder.jpg in Resources */,
+				D818A866179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +326,6 @@
 			files = (
 				D818A7FF179EB9F500EE64D8 /* main.m in Sources */,
 				D818A803179EB9F500EE64D8 /* AppDelegate.m in Sources */,
-				D818A80C179EB9F500EE64D8 /* ViewController.m in Sources */,
 				D818A82A179EBB6C00EE64D8 /* AFHTTPClient.m in Sources */,
 				D818A82B179EBB6C00EE64D8 /* AFHTTPRequestOperation.m in Sources */,
 				D818A82C179EBB6C00EE64D8 /* AFImageRequestOperation.m in Sources */,
@@ -322,6 +342,8 @@
 				D818A84D179EEF8F00EE64D8 /* Model.m in Sources */,
 				D818A851179EEFB400EE64D8 /* Feed.m in Sources */,
 				D818A854179EF07900EE64D8 /* NSDictionary+VPObjectOrNil.m in Sources */,
+				D818A857179EFA5000EE64D8 /* FeedsViewController.m in Sources */,
+				D818A85A179F0F7400EE64D8 /* FeedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,14 +356,6 @@
 				D818A7FC179EB9F500EE64D8 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D818A80D179EB9F500EE64D8 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D818A80E179EB9F500EE64D8 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

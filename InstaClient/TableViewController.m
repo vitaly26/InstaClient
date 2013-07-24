@@ -22,6 +22,13 @@ static BOOL isAvailableUIRefreshControl(void) {
 }
 
 @implementation TableViewController
+- (id)init {
+	self = [super init];
+    if (self) {
+		[self configure];
+    }
+    return self;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

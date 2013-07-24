@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "FeedsViewController.h"
 #import "LoginViewController.h"
 
 @interface AppDelegate () <LoginViewControllerDelegate>
@@ -19,10 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[[NSURLCache sharedURLCache] setDiskCapacity:150*1024*1024];
+	[[NSURLCache sharedURLCache] setMemoryCapacity:50*1024*1024];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-	self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-	self.window.rootViewController = self.viewController;
+	FeedsViewController *feedsVC = [FeedsViewController new];
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:feedsVC];
+	self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
 	
 	LoginViewController *loginVC = [[LoginViewController alloc] init];
@@ -34,7 +37,7 @@
 
 #pragma mark - LoginViewControllerDelegate methods
 - (void)loginViewController:(LoginViewController *)vc succesfullLoginWithToken:(NSString *)token {
-	[vc dismissViewControllerAnimated:YES completion:nil];
+//	[vc dismissViewControllerAnimated:YES completion:nil];
 }
 
 

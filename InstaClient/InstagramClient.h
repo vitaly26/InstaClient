@@ -9,6 +9,8 @@
 #import "AFHTTPClient.h"
 #import "AFNetworking.h"
 
+static NSString const * NotificationUserIsSignedIn = @"NotificationUserIsSignedIn";
+
 @interface InstagramClient : AFHTTPClient
 @property(nonatomic, copy) NSString *code;
 @property(nonatomic, copy) NSString *token;

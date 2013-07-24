@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "InstagramClient.h"
+#import "Feed.h"
 
 @interface LoginViewController () <UIWebViewDelegate>
 @property(nonatomic, weak) UIWebView *webView;
@@ -83,6 +84,8 @@
 				if ([self.delegate respondsToSelector:@selector(loginViewController:succesfullLoginWithToken:)]) {
 					[self.delegate loginViewController:self succesfullLoginWithToken:token];
 				}
+				[self dismissViewControllerAnimated:YES completion:nil];
+				[[NSNotificationCenter defaultCenter] postNotificationName:(NSString *)NotificationUserIsSignedIn object:self];
 			}
 		}];
 		return NO;

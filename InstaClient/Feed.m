@@ -20,6 +20,13 @@
 		self.profilePictureURL = [NSURL URLWithString:profilePicture];
 		
 		self.ID = [dictionary valueOrNilForKeyPath:@"caption.id"];
+		
+		NSString *lowResolution = [dictionary valueOrNilForKeyPath:@"images.low_resolution.url"];
+		self.lowResolutionURL = [NSURL URLWithString:lowResolution];
+		NSString *standardResolution = [dictionary valueOrNilForKeyPath:@"images.standard_resolution.url"];
+		self.standardResolutionURL = [NSURL URLWithString:standardResolution];
+		NSString *thumbnail = [dictionary valueOrNilForKeyPath:@"images.thumbnail.url"];
+		self.thumbnailURL = [NSURL URLWithString:thumbnail];
 	}
 	return self;
 }

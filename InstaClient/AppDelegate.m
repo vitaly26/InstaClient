@@ -10,6 +10,7 @@
 
 #import "FeedsViewController.h"
 #import "LoginViewController.h"
+#import "AFNetworking.h"
 
 @interface AppDelegate () <LoginViewControllerDelegate>
 
@@ -21,6 +22,8 @@
 {
 	[[NSURLCache sharedURLCache] setDiskCapacity:150*1024*1024];
 	[[NSURLCache sharedURLCache] setMemoryCapacity:50*1024*1024];
+	
+	[AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	FeedsViewController *feedsVC = [FeedsViewController new];

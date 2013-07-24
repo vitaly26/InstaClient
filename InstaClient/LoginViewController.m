@@ -69,6 +69,18 @@
 }
 
 #pragma mark - UIWebViewDelegate methods
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+	[[AFNetworkActivityIndicatorManager sharedManager] incrementActivityCount];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+	[[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+	[[AFNetworkActivityIndicatorManager sharedManager] decrementActivityCount];
+}
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
 	NSLog(@"%@", [[[request URL] absoluteString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
 	if ([request.URL.scheme isEqualToString:[InstagramClient redirectScheme]]) {

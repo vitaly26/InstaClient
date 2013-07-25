@@ -43,6 +43,7 @@
 		D818A866179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D818A864179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg */; };
 		D856F63E17A03C4800367911 /* Paginator.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F63D17A03C4800367911 /* Paginator.m */; };
 		D856F64217A04A0A00367911 /* PaginatorUserFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64117A04A0A00367911 /* PaginatorUserFeed.m */; };
+		D856F64517A1340100367911 /* TablePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64417A1340100367911 /* TablePaginator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		D856F63D17A03C4800367911 /* Paginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paginator.m; sourceTree = "<group>"; };
 		D856F64017A04A0A00367911 /* PaginatorUserFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginatorUserFeed.h; sourceTree = "<group>"; };
 		D856F64117A04A0A00367911 /* PaginatorUserFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginatorUserFeed.m; sourceTree = "<group>"; };
+		D856F64317A1340100367911 /* TablePaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TablePaginator.h; sourceTree = "<group>"; };
+		D856F64417A1340100367911 /* TablePaginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TablePaginator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +273,8 @@
 				D856F63D17A03C4800367911 /* Paginator.m */,
 				D856F64017A04A0A00367911 /* PaginatorUserFeed.h */,
 				D856F64117A04A0A00367911 /* PaginatorUserFeed.m */,
+				D856F64317A1340100367911 /* TablePaginator.h */,
+				D856F64417A1340100367911 /* TablePaginator.m */,
 			);
 			name = Paginators;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				D818A85A179F0F7400EE64D8 /* FeedCell.m in Sources */,
 				D856F63E17A03C4800367911 /* Paginator.m in Sources */,
 				D856F64217A04A0A00367911 /* PaginatorUserFeed.m in Sources */,
+				D856F64517A1340100367911 /* TablePaginator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,7 +43,7 @@
 	[self setDefaultValues];
 }
 
-#pragma mark - Public methods
+#pragma mark - PaginatorProtocol methods
 - (void)fetchFirstPage {
 	[self cancelLoading];
 	self.reseted = YES;
@@ -57,7 +57,8 @@
 
 	if (!self.reachedLastPage || self.reseted) {
 		self.requestStatus = RequestStatusInProgress;
-		[self fetchResultsWithNextMaxID:self.nextMaxID pageSize:self.pageSize];
+		NSString *nextMaxID = self.reseted ? nil : self.nextMaxID;
+		[self fetchResultsWithNextMaxID:nextMaxID pageSize:self.pageSize];
 	}
 }
 
@@ -90,6 +91,9 @@
 }
 
 - (void)failedWithError:(NSError *)error {
+	if (error.code == NSURLErrorCancelled) {
+		return;
+	}
 	self.reseted = NO;
 	self.requestStatus = RequestStatusDone;
 	if ([self.delegate respondsToSelector:@selector(paginatorDidFailToRespond:error:)]) {

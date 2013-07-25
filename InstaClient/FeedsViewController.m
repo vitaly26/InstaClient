@@ -11,10 +11,11 @@
 #import "Feed.h"
 #import "FeedCell.h"
 #import "PaginatorUserFeed.h"
+#import "TablePaginator.h"
 
-@interface FeedsViewController () <PaginatorDelegate>
+@interface FeedsViewController () <PaginatorDelegate, TablePaginatorDelegate>
 @property(nonatomic, strong) NSMutableArray *data;
-@property(nonatomic, strong) PaginatorUserFeed *paginator;
+@property(nonatomic, strong) TablePaginator *paginator;
 @end
 
 @implementation FeedsViewController
@@ -24,7 +25,8 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHandler:) name:(NSString *)NotificationUserIsSignedIn object:nil];
 	self.data = [NSMutableArray array];
 	PaginatorUserFeed *paginator = [[PaginatorUserFeed alloc] initWithPageSize:0 delegate:self];
-	self.paginator = paginator;
+	TablePaginator *tablePaginator = [[TablePaginator alloc] initWithPaginator:paginator delegate:self tableView:nil];
+	self.paginator = tablePaginator;
 }
 
 - (void)viewDidLoad {
@@ -33,6 +35,9 @@
 	
 	UIBarButtonItem *exitBtn = [[UIBarButtonItem alloc] initWithTitle:@"Выход" style:UIBarButtonItemStyleBordered target:self action:@selector(exit:)];
 	self.navigationItem.rightBarButtonItem = exitBtn;
+	
+	self.paginator.tableView = self.tableView;
+	[self.paginator setFooterView];
 }
 
 - (void)exit:(id)sender {
@@ -76,21 +81,42 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == self.data.count - 1) {
+		[self.paginator fetchNextPage];
+	}
+}
+
 #pragma mark - PaginatorDelegate methods
 - (void)paginator:(Paginator *)paginator didReceiveResults:(NSArray *)results firstPage:(BOOL)isFirstPage {
 	[self endRefreshing];
-	NSLog(@"results %@", results);
+	NSLog(@"results count %d", results.count);
 	if (isFirstPage) {
 		[self.data removeAllObjects];
 	}
 	[self.data addObjectsFromArray:results];
-	[self.tableView reloadData];
+	if (isFirstPage) {
+		[self.tableView reloadData];
+	} else {
+		NSMutableArray *indexPaths = [NSMutableArray array];
+		NSInteger i = self.data.count - results.count;
+		
+		for (id result in results) {
+			[indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+			i++;
+		}
+		[self.tableView beginUpdates];
+		[self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+		[self.tableView endUpdates];
+	}
 }
 
 - (void)paginatorDidFailToRespond:(Paginator *)paginator error:(NSError *)error {
 	[self endRefreshing];
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
 }
+
+#pragma mark - TablePaginatorDelegate methods
 
 #pragma mark -
 @end

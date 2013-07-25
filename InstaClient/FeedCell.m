@@ -54,10 +54,10 @@ static NSString *cellIdentificator;
 	_feed = feed;
 	
 	self.userName.text = feed.userName;
-	[self.profilePicture setImageWithURL:feed.profilePictureURL placeholderImage:[UIImage imageNamed:@"PhotoPlaceholder"]];
-	[self.pictureView setImageWithURL:feed.standardResolutionURL placeholderImage:[UIImage imageNamed:@"PhotoPlaceholder"]];
+	[self.profilePicture setImageWithURL:feed.profilePictureURL placeholderImage:[UIImage imageNamed:@"PhotoPlaceholder.jpg"]];
+	[self.pictureView setImageWithURL:feed.standardResolutionURL placeholderImage:[UIImage imageNamed:@"PhotoPlaceholder.jpg"]];
 	
-//	[self setNeedsLayout];
+	[self setNeedsLayout];
 }
 
 @end

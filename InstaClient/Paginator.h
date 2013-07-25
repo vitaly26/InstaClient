@@ -14,19 +14,22 @@ typedef enum {
     RequestStatusDone // request succeeded or failed
 } RequestStatus;
 
+@protocol PaginatorProtocol <NSObject>
+@optional
+- (void)fetchFirstPage;
+- (void)fetchNextPage;
+- (void)cancelLoading;
+@end
+
 @protocol PaginatorDelegate;
 
-@interface Paginator : NSObject
+@interface Paginator : NSObject <PaginatorProtocol>
 @property(nonatomic, weak) id<PaginatorDelegate> delegate;
 @property(nonatomic, assign, readonly) NSInteger pageSize;
 @property(nonatomic, assign, readonly) RequestStatus requestStatus;
 @property(nonatomic, readonly, getter = isReachedLastPage) BOOL reachedLastPage;
 
 - (id)initWithPageSize:(NSInteger)pageSize delegate:(id<PaginatorDelegate>)paginatorDelegate;
-
-- (void)fetchFirstPage;
-- (void)fetchNextPage;
-- (void)cancelLoading;
 
 // override in subclass
 - (void)fetchResultsWithNextMaxID:(NSString *)nextMaxID pageSize:(NSInteger)pageSize;

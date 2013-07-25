@@ -15,6 +15,7 @@
 
 static NSString * const kAPIOAuth = @"/oauth/access_token";
 static NSString * const kAPIUserFeed = @"/v1/users/self/feed";
+static NSString * const kAPILikes = @"/v1/media/%@/likes";
 
 #define kAccessToken @"access_token"
 
@@ -43,7 +44,7 @@ static NSString * const kAPIUserFeed = @"/v1/users/self/feed";
 }
 
 + (NSURL *)urlForAuthentication {
-	NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=code", InstagramID, InstagramRedirectURI]];
+	NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=code&scope=likes", InstagramID, InstagramRedirectURI]];
 	return URL;
 }
 
@@ -104,6 +105,25 @@ static NSString * const kAPIUserFeed = @"/v1/users/self/feed";
 			block(nil, error);
 		}
 	}];
+}
+
+- (void)setLike:(BOOL)like forMediaID:(NSString *)ID block:(void (^)(id, NSError *))block {
+	NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+	parameters[kAccessToken] = self.token;
+	NSString *path = [NSString stringWithFormat:kAPILikes, ID];
+	NSString *method = like ? @"POST" : @"DELETE";
+	NSURLRequest *request = [self requestWithMethod:method path:path parameters:parameters];
+	AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+		NSLog(@"response %@", responseObject);
+		if (block) {
+			block(responseObject, nil);
+		}
+	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+		if (block) {
+			block(nil, error);
+		}
+	}];
+	[self enqueueHTTPRequestOperation:operation];
 }
 
 #pragma mark - Cancel operations

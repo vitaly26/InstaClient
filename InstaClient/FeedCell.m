@@ -15,6 +15,9 @@ static NSString *cellIdentificator;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureView;
+@property (weak, nonatomic) IBOutlet UIButton *likeBtn;
+
+- (IBAction)pressedLikeButton:(id)sender;
 
 @end
 
@@ -56,8 +59,18 @@ static NSString *cellIdentificator;
 	self.userName.text = feed.userName;
 	[self.profilePicture setImageWithURL:feed.profilePictureURL placeholderImage:[UIImage imageNamed:@"PhotoPlaceholder.jpg"]];
 	[self.pictureView setImageWithURL:feed.standardResolutionURL placeholderImage:[UIImage imageNamed:@"PhotoPlaceholder.jpg"]];
+	self.likeBtn.selected = [feed.userHasLiked boolValue];
 	
 	[self setNeedsLayout];
 }
 
+- (void)setLike:(BOOL)like {
+	self.likeBtn.selected = like;
+}
+
+- (IBAction)pressedLikeButton:(id)sender {
+	if ([self.delegate respondsToSelector:@selector(didPressedLikeButtonInCell:)]) {
+		[self.delegate didPressedLikeButtonInCell:self];
+	}
+}
 @end

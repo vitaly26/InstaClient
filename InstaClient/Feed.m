@@ -19,7 +19,7 @@
 		NSString *profilePicture = [dictionary vp_valueOrNilForKeyPath:@"caption.from.profile_picture"];
 		self.profilePictureURL = [NSURL URLWithString:profilePicture];
 		
-		self.ID = [dictionary vp_valueOrNilForKeyPath:@"caption.id"];
+		self.ID = [dictionary vp_valueOrNilForKeyPath:@"id"];
 		
 		NSString *lowResolution = [dictionary vp_valueOrNilForKeyPath:@"images.low_resolution.url"];
 		self.lowResolutionURL = [NSURL URLWithString:lowResolution];
@@ -27,6 +27,8 @@
 		self.standardResolutionURL = [NSURL URLWithString:standardResolution];
 		NSString *thumbnail = [dictionary vp_valueOrNilForKeyPath:@"images.thumbnail.url"];
 		self.thumbnailURL = [NSURL URLWithString:thumbnail];
+		
+		self.userHasLiked = [dictionary vp_valueOrNilForKeyPath:@"user_has_liked"];
 	}
 	return self;
 }

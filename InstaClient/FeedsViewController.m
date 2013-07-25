@@ -13,7 +13,7 @@
 #import "PaginatorUserFeed.h"
 #import "TablePaginator.h"
 
-@interface FeedsViewController () <PaginatorDelegate, TablePaginatorDelegate>
+@interface FeedsViewController () <PaginatorDelegate, TablePaginatorDelegate, FeedCellDelegate>
 @property(nonatomic, strong) NSMutableArray *data;
 @property(nonatomic, strong) TablePaginator *paginator;
 @end
@@ -67,6 +67,7 @@
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [FeedCell cell];
+		cell.delegate = self;
     }
 	Feed *feed = self.data[indexPath.row];
 	cell.feed = feed;
@@ -118,5 +119,25 @@
 
 #pragma mark - TablePaginatorDelegate methods
 
-#pragma mark -
+#pragma mark - FeedCellDelegate methods
+- (void)didPressedLikeButtonInCell:(FeedCell *)cell {
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	if (indexPath) {
+		Feed *feed = self.data[indexPath.row];
+		NSLog(@"%@", feed.userName);
+		BOOL liked = ![feed.userHasLiked boolValue];
+		feed.userHasLiked = [NSNumber numberWithBool:liked];
+		[cell setLike:liked];
+		[[InstagramClient sharedClient] setLike:liked forMediaID:feed.ID block:^(id responseObject, NSError *error) {
+			if (error) {
+				NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
+				[cell setLike:!liked];
+				feed.userHasLiked = [NSNumber numberWithBool:!liked];
+			} else {
+				NSLog(@"success %@ %@", liked ? @"like" : @"unlike", feed.userName);
+			}
+		}];
+	}
+}
+
 @end

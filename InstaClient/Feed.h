@@ -16,4 +16,5 @@
 @property(nonatomic, copy) NSURL *lowResolutionURL;
 @property(nonatomic, copy) NSURL *standardResolutionURL;
 @property(nonatomic, copy) NSURL *thumbnailURL;
+@property(nonatomic, strong) NSNumber *userHasLiked;
 @end

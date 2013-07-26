@@ -44,6 +44,8 @@
 		D856F63E17A03C4800367911 /* Paginator.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F63D17A03C4800367911 /* Paginator.m */; };
 		D856F64217A04A0A00367911 /* PaginatorUserFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64117A04A0A00367911 /* PaginatorUserFeed.m */; };
 		D856F64517A1340100367911 /* TablePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64417A1340100367911 /* TablePaginator.m */; };
+		D856F64817A2FDF400367911 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64717A2FDF300367911 /* LoginManager.m */; };
+		D856F64C17A2FF5400367911 /* UIViewController+VPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64B17A2FF5300367911 /* UIViewController+VPExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,10 @@
 		D856F64117A04A0A00367911 /* PaginatorUserFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginatorUserFeed.m; sourceTree = "<group>"; };
 		D856F64317A1340100367911 /* TablePaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TablePaginator.h; sourceTree = "<group>"; };
 		D856F64417A1340100367911 /* TablePaginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TablePaginator.m; sourceTree = "<group>"; };
+		D856F64617A2FDF100367911 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
+		D856F64717A2FDF300367911 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
+		D856F64A17A2FF5200367911 /* UIViewController+VPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VPExtension.h"; sourceTree = "<group>"; };
+		D856F64B17A2FF5300367911 /* UIViewController+VPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VPExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,16 +173,13 @@
 				D818A815179EBB6C00EE64D8 /* SDK */,
 				D818A801179EB9F500EE64D8 /* AppDelegate.h */,
 				D818A802179EB9F500EE64D8 /* AppDelegate.m */,
-				D818A83C179EC17900EE64D8 /* LoginViewController.h */,
-				D818A83D179EC17900EE64D8 /* LoginViewController.m */,
+				D856F64917A2FE0100367911 /* Login */,
 				D818A839179EBE3D00EE64D8 /* InstagramClient.h */,
 				D818A83A179EBE3D00EE64D8 /* InstagramClient.m */,
 				D818A843179EEABA00EE64D8 /* TableViewController.h */,
 				D818A844179EEABA00EE64D8 /* TableViewController.m */,
 				D818A84E179EEFA200EE64D8 /* Model */,
-				D818A7F9179EB9F500EE64D8 /* Supporting Files */,
-				D818A852179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.h */,
-				D818A853179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.m */,
+				D856F64D17A2FF5C00367911 /* Categories */,
 				D818A855179EFA5000EE64D8 /* FeedsViewController.h */,
 				D818A856179EFA5000EE64D8 /* FeedsViewController.m */,
 				D818A858179F0F7400EE64D8 /* FeedCell.h */,
@@ -184,6 +187,7 @@
 				D818A85B179F0F8C00EE64D8 /* FeedCell.xib */,
 				D856F63F17A0494C00367911 /* Paginators */,
 				D818A85E179F141100EE64D8 /* Resource */,
+				D818A7F9179EB9F500EE64D8 /* Supporting Files */,
 			);
 			path = InstaClient;
 			sourceTree = "<group>";
@@ -279,6 +283,28 @@
 			name = Paginators;
 			sourceTree = "<group>";
 		};
+		D856F64917A2FE0100367911 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D818A83C179EC17900EE64D8 /* LoginViewController.h */,
+				D818A83D179EC17900EE64D8 /* LoginViewController.m */,
+				D856F64617A2FDF100367911 /* LoginManager.h */,
+				D856F64717A2FDF300367911 /* LoginManager.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		D856F64D17A2FF5C00367911 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D818A852179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.h */,
+				D818A853179EF07800EE64D8 /* NSDictionary+VPObjectOrNil.m */,
+				D856F64A17A2FF5200367911 /* UIViewController+VPExtension.h */,
+				D856F64B17A2FF5300367911 /* UIViewController+VPExtension.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,6 +396,8 @@
 				D856F63E17A03C4800367911 /* Paginator.m in Sources */,
 				D856F64217A04A0A00367911 /* PaginatorUserFeed.m in Sources */,
 				D856F64517A1340100367911 /* TablePaginator.m in Sources */,
+				D856F64817A2FDF400367911 /* LoginManager.m in Sources */,
+				D856F64C17A2FF5400367911 /* UIViewController+VPExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

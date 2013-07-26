@@ -9,10 +9,9 @@
 #import "AppDelegate.h"
 
 #import "FeedsViewController.h"
-#import "LoginViewController.h"
-#import "AFNetworking.h"
+#import "LoginManager.h"
 
-@interface AppDelegate () <LoginViewControllerDelegate>
+@interface AppDelegate ()
 
 @end
 
@@ -31,17 +30,9 @@
 	self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
 	
-	LoginViewController *loginVC = [[LoginViewController alloc] init];
-	loginVC.delegate = self;
-	UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:loginVC];
-	[self.window.rootViewController presentViewController:nc animated:NO completion:nil];
+	[[LoginManager sharedLoginManager] signInAnimated:NO];
+	
     return YES;
 }
-
-#pragma mark - LoginViewControllerDelegate methods
-- (void)loginViewController:(LoginViewController *)vc succesfullLoginWithToken:(NSString *)token {
-//	[vc dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 @end

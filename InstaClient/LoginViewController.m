@@ -36,22 +36,23 @@
 	webView.delegate = self;
 	self.webView = webView;
 	
+//	UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Закрыть" style:UIBarButtonItemStylePlain target:self action:@selector(close:)];
+//	self.navigationItem.leftBarButtonItem = closeButton;
+	
+	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
+	self.navigationItem.rightBarButtonItem = refreshButton;
+	
+	[self refresh:nil];
+}
+
+//- (void)close:(id)sender {
+//	[self dismissViewControllerAnimated:YES completion:nil];
+//}
+
+- (void)refresh:(id)sedner {
 	NSURL *URL = [InstagramClient urlForAuthentication];
 	NSURLRequest *request = [NSURLRequest requestWithURL:URL];
 	[self.webView loadRequest:request];
-	
-//	UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Закрыть" style:UIBarButtonItemStylePlain target:self action:@selector(close:)];
-//	self.navigationItem.leftBarButtonItem = closeButton;
-}
-
-- (void)close:(id)sender {
-	[self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSString *)getCodeFromURL:(NSURL *)URL {
@@ -96,12 +97,11 @@
 				if ([self.delegate respondsToSelector:@selector(loginViewController:succesfullLoginWithToken:)]) {
 					[self.delegate loginViewController:self succesfullLoginWithToken:token];
 				}
-				[self dismissViewControllerAnimated:YES completion:nil];
-				[[NSNotificationCenter defaultCenter] postNotificationName:(NSString *)NotificationUserIsSignedIn object:self];
 			}
 		}];
 		return NO;
 	}
 	return YES;
 }
+
 @end

@@ -12,6 +12,7 @@
 #import "FeedCell.h"
 #import "PaginatorUserFeed.h"
 #import "TablePaginator.h"
+#import "LoginManager.h"
 
 @interface FeedsViewController () <PaginatorDelegate, TablePaginatorDelegate, FeedCellDelegate>
 @property(nonatomic, strong) NSMutableArray *data;
@@ -22,7 +23,7 @@
 
 - (void)configure {
 	[super configure];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHandler:) name:(NSString *)NotificationUserIsSignedIn object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHandler:) name:kNotificationUserIsSignedIn object:nil];
 	self.data = [NSMutableArray array];
 	PaginatorUserFeed *paginator = [[PaginatorUserFeed alloc] initWithPageSize:0 delegate:self];
 	TablePaginator *tablePaginator = [[TablePaginator alloc] initWithPaginator:paginator delegate:self tableView:nil];
@@ -41,7 +42,7 @@
 }
 
 - (void)exit:(id)sender {
-	
+	[[LoginManager sharedLoginManager] signOutAnimated:YES];
 }
 
 - (void)refresh:(id)sender {

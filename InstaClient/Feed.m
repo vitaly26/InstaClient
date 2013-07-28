@@ -7,6 +7,7 @@
 //
 
 #import "Feed.h"
+#import "User.h"
 
 @implementation Feed
 
@@ -29,6 +30,7 @@
 		self.thumbnailURL = [NSURL URLWithString:thumbnail];
 		
 		self.userHasLiked = [dictionary vp_valueOrNilForKeyPath:@"user_has_liked"];
+		self.user = [[User alloc] initWithDictionary:[dictionary vp_valueOrNilForKeyPath:@"user"]];
 	}
 	return self;
 }

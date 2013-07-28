@@ -13,6 +13,7 @@
 #import "PaginatorUserFeed.h"
 #import "TablePaginator.h"
 #import "LoginManager.h"
+#import "UserViewController.h"
 
 @interface FeedsViewController () <PaginatorDelegate, TablePaginatorDelegate, FeedCellDelegate>
 @property(nonatomic, strong) NSMutableArray *data;
@@ -81,6 +82,10 @@
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	Feed *feed = self.data[indexPath.row];
+	UserViewController *userVC = [[UserViewController alloc] initWithDefaultNib];
+	userVC.feed = feed;
+	[self.navigationController pushViewController:userVC animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

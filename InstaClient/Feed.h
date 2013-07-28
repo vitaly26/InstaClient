@@ -8,6 +8,8 @@
 
 #import "Model.h"
 
+@class User;
+
 @interface Feed : Model
 @property(nonatomic, copy) NSString *userName;
 @property(nonatomic, copy) NSString *userID;
@@ -17,4 +19,5 @@
 @property(nonatomic, copy) NSURL *standardResolutionURL;
 @property(nonatomic, copy) NSURL *thumbnailURL;
 @property(nonatomic, strong) NSNumber *userHasLiked;
+@property(nonatomic, strong) User *user;
 @end

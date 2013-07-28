@@ -46,6 +46,9 @@
 		D856F64517A1340100367911 /* TablePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64417A1340100367911 /* TablePaginator.m */; };
 		D856F64817A2FDF400367911 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64717A2FDF300367911 /* LoginManager.m */; };
 		D856F64C17A2FF5400367911 /* UIViewController+VPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D856F64B17A2FF5300367911 /* UIViewController+VPExtension.m */; };
+		D8F6EAA717A53DEE00D20027 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6EAA617A53DED00D20027 /* User.m */; };
+		D8F6EAAB17A540EF00D20027 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6EAA917A540EF00D20027 /* UserViewController.m */; };
+		D8F6EAAC17A540EF00D20027 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F6EAAA17A540EF00D20027 /* UserViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +119,11 @@
 		D856F64717A2FDF300367911 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
 		D856F64A17A2FF5200367911 /* UIViewController+VPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VPExtension.h"; sourceTree = "<group>"; };
 		D856F64B17A2FF5300367911 /* UIViewController+VPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VPExtension.m"; sourceTree = "<group>"; };
+		D8F6EAA517A53DED00D20027 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		D8F6EAA617A53DED00D20027 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
+		D8F6EAA817A540EF00D20027 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		D8F6EAA917A540EF00D20027 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		D8F6EAAA17A540EF00D20027 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +193,9 @@
 				D818A858179F0F7400EE64D8 /* FeedCell.h */,
 				D818A859179F0F7400EE64D8 /* FeedCell.m */,
 				D818A85B179F0F8C00EE64D8 /* FeedCell.xib */,
+				D8F6EAA817A540EF00D20027 /* UserViewController.h */,
+				D8F6EAA917A540EF00D20027 /* UserViewController.m */,
+				D8F6EAAA17A540EF00D20027 /* UserViewController.xib */,
 				D856F63F17A0494C00367911 /* Paginators */,
 				D818A85E179F141100EE64D8 /* Resource */,
 				D818A7F9179EB9F500EE64D8 /* Supporting Files */,
@@ -257,6 +268,8 @@
 				D818A84C179EEF8F00EE64D8 /* Model.m */,
 				D818A84F179EEFB400EE64D8 /* Feed.h */,
 				D818A850179EEFB400EE64D8 /* Feed.m */,
+				D8F6EAA517A53DED00D20027 /* User.h */,
+				D8F6EAA617A53DED00D20027 /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -363,6 +376,7 @@
 				D818A85C179F0F8D00EE64D8 /* FeedCell.xib in Resources */,
 				D818A865179FA59300EE64D8 /* PhotoPlaceholder.jpg in Resources */,
 				D818A866179FA59300EE64D8 /* PhotoPlaceholder@2x.jpg in Resources */,
+				D8F6EAAC17A540EF00D20027 /* UserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +412,8 @@
 				D856F64517A1340100367911 /* TablePaginator.m in Sources */,
 				D856F64817A2FDF400367911 /* LoginManager.m in Sources */,
 				D856F64C17A2FF5400367911 /* UIViewController+VPExtension.m in Sources */,
+				D8F6EAA717A53DEE00D20027 /* User.m in Sources */,
+				D8F6EAAB17A540EF00D20027 /* UserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

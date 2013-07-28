@@ -16,6 +16,7 @@
 static NSString * const kAPIOAuth = @"/oauth/access_token";
 static NSString * const kAPIUserFeed = @"/v1/users/self/feed";
 static NSString * const kAPILikes = @"/v1/media/%@/likes";
+static NSString * const kAPIUserInfo = @"/v1/users/%@";
 
 #define kAccessToken @"access_token"
 
@@ -124,6 +125,22 @@ static NSString * const kAPILikes = @"/v1/media/%@/likes";
 		}
 	}];
 	[self enqueueHTTPRequestOperation:operation];
+}
+
+- (void)getUserInfoForUserID:(NSString *)ID block:(void (^)(id, NSError *))block {
+	NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+	parameters[kAccessToken] = self.token;
+	NSString *path = [NSString stringWithFormat:kAPIUserInfo, ID];
+	[self getPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+		NSLog(@"response %@", responseObject);
+		if (block) {
+			block(responseObject, nil);
+		}
+	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+		if (block) {
+			block(nil, error);
+		}
+	}];
 }
 
 #pragma mark - Cancel operations

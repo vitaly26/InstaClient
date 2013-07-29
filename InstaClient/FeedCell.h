@@ -26,5 +26,6 @@
 @protocol FeedCellDelegate <NSObject>
 @optional
 - (void)didPressedLikeButtonInCell:(FeedCell *)cell;
+- (void)didPressedLikesButtonInCell:(FeedCell *)cell;
 
 @end

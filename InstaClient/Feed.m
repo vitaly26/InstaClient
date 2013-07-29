@@ -31,6 +31,7 @@
 		
 		self.userHasLiked = [dictionary vp_valueOrNilForKeyPath:@"user_has_liked"];
 		self.user = [[User alloc] initWithDictionary:[dictionary vp_valueOrNilForKeyPath:@"user"]];
+		self.likesCount = [dictionary vp_valueOrNilForKeyPath:@"likes.count"];
 	}
 	return self;
 }

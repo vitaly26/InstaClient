@@ -143,6 +143,22 @@ static NSString * const kAPIUserInfo = @"/v1/users/%@";
 	}];
 }
 
+- (void)getLikesForMediaID:(NSString *)ID block:(void (^)(id, NSError *))block {
+	NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+	parameters[kAccessToken] = self.token;
+	NSString *path = [NSString stringWithFormat:kAPILikes, ID];
+	[self getPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+		NSLog(@"response %@", responseObject);
+		if (block) {
+			block(responseObject, nil);
+		}
+	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+		if (block) {
+			block(nil, error);
+		}
+	}];
+}
+
 #pragma mark - Cancel operations
 - (void)cancelUserFeedLoading {
 	[self cancelAllHTTPOperationsWithMethod:@"GET" path:kAPIUserFeed];

@@ -14,6 +14,7 @@
 #import "TablePaginator.h"
 #import "LoginManager.h"
 #import "UserViewController.h"
+#import "LikesViewController.h"
 
 @interface FeedsViewController () <PaginatorDelegate, TablePaginatorDelegate, FeedCellDelegate>
 @property(nonatomic, strong) NSMutableArray *data;
@@ -143,6 +144,15 @@
 				NSLog(@"success %@ %@", liked ? @"like" : @"unlike", feed.userName);
 			}
 		}];
+	}
+}
+
+- (void)didPressedLikesButtonInCell:(FeedCell *)cell {
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	if (indexPath) {
+		LikesViewController *likesVC = [[LikesViewController alloc] init];
+		likesVC.feed = self.data[indexPath.row];
+		[self.navigationController pushViewController:likesVC animated:YES];
 	}
 }
 

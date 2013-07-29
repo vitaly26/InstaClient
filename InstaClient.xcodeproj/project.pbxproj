@@ -49,6 +49,7 @@
 		D8F6EAA717A53DEE00D20027 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6EAA617A53DED00D20027 /* User.m */; };
 		D8F6EAAB17A540EF00D20027 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6EAA917A540EF00D20027 /* UserViewController.m */; };
 		D8F6EAAC17A540EF00D20027 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F6EAAA17A540EF00D20027 /* UserViewController.xib */; };
+		D8F6EAAF17A6F67100D20027 /* LikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6EAAE17A6F67100D20027 /* LikesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,8 @@
 		D8F6EAA817A540EF00D20027 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		D8F6EAA917A540EF00D20027 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		D8F6EAAA17A540EF00D20027 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		D8F6EAAD17A6F67100D20027 /* LikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikesViewController.h; sourceTree = "<group>"; };
+		D8F6EAAE17A6F67100D20027 /* LikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,8 @@
 				D8F6EAA817A540EF00D20027 /* UserViewController.h */,
 				D8F6EAA917A540EF00D20027 /* UserViewController.m */,
 				D8F6EAAA17A540EF00D20027 /* UserViewController.xib */,
+				D8F6EAAD17A6F67100D20027 /* LikesViewController.h */,
+				D8F6EAAE17A6F67100D20027 /* LikesViewController.m */,
 				D856F63F17A0494C00367911 /* Paginators */,
 				D818A85E179F141100EE64D8 /* Resource */,
 				D818A7F9179EB9F500EE64D8 /* Supporting Files */,
@@ -414,6 +419,7 @@
 				D856F64C17A2FF5400367911 /* UIViewController+VPExtension.m in Sources */,
 				D8F6EAA717A53DEE00D20027 /* User.m in Sources */,
 				D8F6EAAB17A540EF00D20027 /* UserViewController.m in Sources */,
+				D8F6EAAF17A6F67100D20027 /* LikesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

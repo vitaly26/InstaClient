@@ -26,6 +26,7 @@
 - (void)userFeedWithMaxID:(NSString *)maxID block:(void (^)(id responseObject, NSError *error))block;
 - (void)setLike:(BOOL)like forMediaID:(NSString *)ID block:(void (^)(id responseObject, NSError *error))block;
 - (void)getUserInfoForUserID:(NSString *)ID block:(void (^)(id responseObject, NSError *error))block;
+- (void)getLikesForMediaID:(NSString *)ID block:(void (^)(id responseObject, NSError *error))block;
 
 #pragma mark - Cancel operations
 - (void)cancelUserFeedLoading;

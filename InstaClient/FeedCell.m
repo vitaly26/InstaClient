@@ -16,8 +16,10 @@ static NSString *cellIdentificator;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureView;
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *likesBtn;
 
 - (IBAction)pressedLikeButton:(id)sender;
+- (IBAction)pressedLikesButton:(id)sender;
 
 @end
 
@@ -61,6 +63,9 @@ static NSString *cellIdentificator;
 	[self.pictureView setImageWithURL:feed.standardResolutionURL placeholderImage:[UIImage imageNamed:@"PhotoPlaceholder.jpg"]];
 	self.likeBtn.selected = [feed.userHasLiked boolValue];
 	
+	NSString *likesBtnTitle = [NSString stringWithFormat:@"Нравится %@", feed.likesCount];
+	[self.likesBtn setTitle:likesBtnTitle forState:UIControlStateNormal];
+	
 	[self setNeedsLayout];
 }
 
@@ -71,6 +76,12 @@ static NSString *cellIdentificator;
 - (IBAction)pressedLikeButton:(id)sender {
 	if ([self.delegate respondsToSelector:@selector(didPressedLikeButtonInCell:)]) {
 		[self.delegate didPressedLikeButtonInCell:self];
+	}
+}
+
+- (IBAction)pressedLikesButton:(id)sender {
+	if ([self.delegate respondsToSelector:@selector(didPressedLikesButtonInCell:)]) {
+		[self.delegate didPressedLikesButtonInCell:self];
 	}
 }
 @end

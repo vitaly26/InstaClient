@@ -20,4 +20,5 @@
 @property(nonatomic, copy) NSURL *thumbnailURL;
 @property(nonatomic, strong) NSNumber *userHasLiked;
 @property(nonatomic, strong) User *user;
+@property(nonatomic, strong) NSNumber *likesCount;
 @end

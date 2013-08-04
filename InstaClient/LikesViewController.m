@@ -11,9 +11,10 @@
 #import "User.h"
 #import "InstagramClient.h"
 #import "NSDictionary+VPObjectOrNil.h"
+#import "InstaClientDataModel.h"
 
 @interface LikesViewController ()
-@property(nonatomic, strong) NSMutableArray *data;
+@property(nonatomic, readonly) NSMutableArray *data;
 @property(nonatomic, weak) UIActivityIndicatorView *indicator;
 @end
 
@@ -40,24 +41,53 @@
 	[self refresh:nil];
 }
 
+- (NSMutableArray *)data {
+	return [NSMutableArray arrayWithArray:[self.feed.likes allObjects]];
+}
+
 - (void)refresh:(id)sender {
 	[self.indicator startAnimating];
-	[[InstagramClient sharedClient] getLikesForMediaID:self.feed.ID block:^(id responseObject, NSError *error) {
+	[[InstagramClient sharedClient] getLikesForMediaID:self.feed.identificator block:^(id responseObject, NSError *error) {
 		[self.indicator stopAnimating];
 		if (error) {
 			NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
 		} else {
 			NSArray *result = [((NSDictionary *)responseObject) vp_valueOrNilForKeyPath:@"data"];
-			if (self.data == nil) {
-				self.data = [NSMutableArray arrayWithCapacity:result.count];
-			} else {
-				[self.data removeAllObjects];
-			}
-			for (NSDictionary *dict in result) {
-				User *user = [[User alloc] initWithDictionary:dict];
-				[self.data addObject:user];
-			}
-			[self.tableView reloadData];
+			
+			NSManagedObjectContext *moc = [[InstaClientDataModel sharedDataModel] mainContext];
+			NSManagedObjectContext *tempMock = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+			tempMock.parentContext = moc;
+			
+			NSManagedObjectID *objectID = self.feed.objectID;
+			[tempMock performBlock:^{
+				Feed *feed = (Feed *)[tempMock objectWithID:objectID];
+				[feed removeLikes:feed.likes];
+				for (NSDictionary *dict in result) {
+					NSString *userID = [dict vp_valueOrNilForKeyPath:@"id"];
+					User *user = [User userWithID:userID usingManagedObjectContext:tempMock];
+					if (user == nil) {
+						user = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([User class]) inManagedObjectContext:tempMock];
+						[user updateWithDictionary:dict];
+					}
+					[feed addLikesObject:user];
+				}
+				[tempMock save:nil];
+				[moc performBlock:^{
+					[moc save:nil];
+					[self.tableView reloadData];
+				}];
+			}];
+//			NSArray *result = [((NSDictionary *)responseObject) vp_valueOrNilForKeyPath:@"data"];
+//			if (self.data == nil) {
+//				self.data = [NSMutableArray arrayWithCapacity:result.count];
+//			} else {
+//				[self.data removeAllObjects];
+//			}
+//			for (NSDictionary *dict in result) {
+//				User *user = [[User alloc] initWithDictionary:dict];
+//				[self.data addObject:user];
+//			}
+//			[self.tableView reloadData];
 		}
 	}];
 }

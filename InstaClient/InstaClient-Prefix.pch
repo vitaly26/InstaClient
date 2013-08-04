@@ -14,4 +14,5 @@
 	#import <SystemConfiguration/SystemConfiguration.h>
 	#import <MobileCoreServices/MobileCoreServices.h>
 	#import "AFNetworking.h"
+	#import <CoreData/CoreData.h>
 #endif

@@ -11,6 +11,7 @@
 #import "User.h"
 #import "InstagramClient.h"
 #import "NSDictionary+VPObjectOrNil.h"
+#import "InstaClientDataModel.h"
 
 @interface UserViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileView;
@@ -36,7 +37,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	User *user = self.feed.user;
+	User *user = (User *)self.feed.user;
 	self.title = user.userName;
 	
 	UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -56,16 +57,17 @@
 		if (error) {
 			NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
 		} else {
+			//без обработки в другом потоке, т.к. JSON маленький
 			NSDictionary *result = [((NSDictionary *)responseObject) vp_valueOrNilForKeyPath:@"data"];
-			User *user = [[User alloc] initWithDictionary:result];
-			self.feed.user = user;
+			User *user = (User *)self.feed.user;
+			[user updateWithDictionary:result];
 			[self updateView];
 		}
 	}];
 }
 
 - (void)updateView {
-	User *user = self.feed.user;
+	User *user = (User *)self.feed.user;
 	[self.profileView setImageWithURL:user.profilePictureURL placeholderImage:[UIImage imageNamed:@"PhotoPlaceholder.jpg"]];
 	self.mediaCountLbl.text = [user.mediaCount stringValue];
 	self.followedByCountLbl.text = [user.followedByCount stringValue];

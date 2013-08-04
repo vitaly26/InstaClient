@@ -20,13 +20,7 @@
 		} else {
 			NSString *newNextMaxID = [((NSDictionary *)responseObject) vp_valueOrNilForKeyPath:@"pagination.next_max_id"];
 			NSArray *results = [((NSDictionary *)responseObject) vp_valueOrNilForKeyPath:@"data"];
-
-			NSMutableArray *feeds = [NSMutableArray array];
-			for (NSDictionary *item in results) {
-				Feed *feed = [[Feed alloc] initWithDictionary:item];
-				[feeds addObject:feed];
-			}
-			[self receivedResults:feeds nextMaxID:newNextMaxID];
+			[self receivedResults:results nextMaxID:newNextMaxID];
 		}
 	}];
 }

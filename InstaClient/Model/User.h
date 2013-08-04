@@ -6,16 +6,13 @@
 //  Copyright (c) 2013 Vitaly. All rights reserved.
 //
 
-#import "Model.h"
+#import "_User.h"
 
-@interface User : Model
-@property(nonatomic, copy) NSString *bio;
-@property(nonatomic, copy) NSString *fullName;
-@property(nonatomic, copy) NSString *ID;
+@interface User : _User
 @property(nonatomic, copy) NSURL *profilePictureURL;
-@property(nonatomic, copy) NSString *userName;
-@property(nonatomic, copy) NSString *webSite;
-@property(nonatomic, strong) NSNumber *followedByCount;
-@property(nonatomic, strong) NSNumber *followsCount;
-@property(nonatomic, strong) NSNumber *mediaCount;
+
++ (User *)userWithID:(NSString *)ID usingManagedObjectContext:(NSManagedObjectContext *)moc;
+
+- (void)updateWithDictionary:(NSDictionary *)dictionary;
+
 @end
